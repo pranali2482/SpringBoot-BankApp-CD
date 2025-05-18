@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: bankapp
-        image: 266869541345.dkr.ecr.ap-south-1.amazonaws.com/bankapp:20
+        image: 266869541345.dkr.ecr.ap-south-1.amazonaws.com/bankapp:21
         ports:
         - containerPort: 8080
         env:
