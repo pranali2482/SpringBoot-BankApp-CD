@@ -16,15 +16,14 @@ spec:
       - name: bankapp
         image: {{ .Values.bankapp.image }}:{{ .Values.bankapp.tag }}
         ports:
-        - containerPort: {{ .Values.bankapp.containerPort }}
+        - containerPort: 8080
         env:
         - name: SPRING_DATASOURCE_URL
-          value: jdbc:mysql://{{ .Values.bankapp.db.host }}:{{ .Values.bankapp.db.port }}/{{ .Values.bankapp.db.dbName }}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+          value: jdbc:mysql://mysql-service:3306/bankappdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
         - name: SPRING_DATASOURCE_USERNAME
-          value: {{ .Values.bankapp.db.username }}
+          value: root
         - name: SPRING_DATASOURCE_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.bankapp.db.secretName }}
+              name: db-secret
               key: MYSQL_ROOT_PASSWORD
-
