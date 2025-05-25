@@ -3,9 +3,7 @@ kind: Service
 metadata:
   name: mysql-service
 spec:
+  ports:
+  - port: 3306
   selector:
     app: mysql
-  ports:
-  - port: {{ .Values.database.containerPort }}
-    targetPort: {{ .Values.database.containerPort }}
-
