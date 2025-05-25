@@ -1,6 +1,6 @@
 bankapp:
   image: 266869541345.dkr.ecr.ap-south-1.amazonaws.com/bankapp
-  tag: "22"
+  tag: "${RUN_NUMBER}"
   replicaCount: 2
 
 
