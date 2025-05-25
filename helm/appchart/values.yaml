@@ -1,0 +1,19 @@
+bankapp:
+  image: 266869541345.dkr.ecr.ap-south-1.amazonaws.com/bankapp
+  tag: "22"
+  replicaCount: 2
+  containerPort: 8080
+  servicePort: 80
+  db:
+    host: mysql-service
+    port: 3306
+    dbName: bankappdb
+    username: root
+    secretName: db-secret
+
+database:
+  image: mysql
+  tag: "8"
+  containerPort: 3306
+  secretName: db-secret
+

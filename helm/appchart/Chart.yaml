@@ -1,0 +1,7 @@
+apiVersion: v2
+name: appchart
+description: Helm chart for BankApp and MySQL
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+
